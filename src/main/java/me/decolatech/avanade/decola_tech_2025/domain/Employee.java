@@ -30,6 +30,10 @@ public class Employee {
    @OneToOne(cascade = CascadeType.ALL)
    private ProfessionalInformation professionalInformation;
 
+   public Long getId() {
+      return id;
+   }
+
    public String getName() {
       return name;
    }

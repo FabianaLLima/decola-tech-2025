@@ -2,14 +2,16 @@ package me.decolatech.avanade.decola_tech_2025.service;
 
 import me.decolatech.avanade.decola_tech_2025.domain.Employee;
 
+import java.util.List;
+
 public interface EmployeeService {
     Employee create(Employee employee);
 
     Employee getEmployeeById(Long id);
 
-    Employee getEmployees();
+    List<Employee> getEmployees();
 
     Employee updateEmployee(Employee employee);
 
-    Employee deleteEmployee(Long id);
+    void deleteEmployee(Long id);
 }
