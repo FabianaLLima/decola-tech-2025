@@ -1,12 +1,33 @@
 package me.decolatech.avanade.decola_tech_2025.domain;
 
+import jakarta.persistence.*;
+
+@Entity(name= "tb_employee")
 public class Employee {
+
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   private Long id;
+
+   @Column(unique = true)
    private String name;
+
+   @Column(unique = true)
    private String cpf;
+
+   @Column(unique = true)
    private String email;
+
+   @Column(unique = true)
    private String phone;
+
+   @OneToOne(cascade = CascadeType.ALL)
    private Address address;
+
+   @Column(unique = true)
    private String  dateOfBirth;
+
+   @OneToOne(cascade = CascadeType.ALL)
    private ProfessionalInformation professionalInformation;
 
    public String getName() {

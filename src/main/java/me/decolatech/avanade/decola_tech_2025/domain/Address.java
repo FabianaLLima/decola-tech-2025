@@ -1,9 +1,23 @@
 package me.decolatech.avanade.decola_tech_2025.domain;
 
+import jakarta.persistence.*;
+
+@Entity(name = "tb_address")
 public class Address {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true)
     private String city;
+
+    @Column(unique = true)
     private String state;
+
+    @Column(unique = true)
     private String street;
+
+    @Column(unique = true)
     private int number;
 
     public String getCity() {
