@@ -9,29 +9,29 @@ public class Employee {
    @GeneratedValue(strategy = GenerationType.AUTO)
    private Long id;
 
-   @Column(unique = true)
    private String name;
 
    @Column(unique = true)
    private String cpf;
 
-   @Column(unique = true)
    private String email;
 
-   @Column(unique = true)
    private String phone;
 
    @OneToOne(cascade = CascadeType.ALL)
    private Address address;
 
-   @Column(unique = true)
-   private String  dateOfBirth;
+   private String dateOfBirth;
 
    @OneToOne(cascade = CascadeType.ALL)
    private ProfessionalInformation professionalInformation;
 
    public Long getId() {
       return id;
+   }
+
+   public void setId(Long id) {
+      this.id = id;
    }
 
    public String getName() {

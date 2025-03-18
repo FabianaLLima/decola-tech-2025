@@ -8,17 +8,21 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private String city;
 
-    @Column(unique = true)
     private String state;
 
-    @Column(unique = true)
     private String street;
 
-    @Column(unique = true)
     private int number;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCity() {
         return city;

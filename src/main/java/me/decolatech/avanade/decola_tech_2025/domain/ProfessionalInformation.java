@@ -8,14 +8,19 @@ public class ProfessionalInformation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private String position;
 
-    @Column(unique = true)
     private double salary;
 
-    @Column(unique = true)
     private String dateOfJoiningTheCompany;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getPosition() {
         return position;

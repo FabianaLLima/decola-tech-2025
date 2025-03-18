@@ -2,10 +2,12 @@ package me.decolatech.avanade.decola_tech_2025.service;
 
 import me.decolatech.avanade.decola_tech_2025.domain.Employee;
 import me.decolatech.avanade.decola_tech_2025.repository.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Service
 public class EmployeeServiceImp implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
