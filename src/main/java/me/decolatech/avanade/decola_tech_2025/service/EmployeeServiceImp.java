@@ -35,8 +35,8 @@ public class EmployeeServiceImp implements EmployeeService {
     }
 
     @Override
-    public Employee updateEmployee(Employee employee) {
-        Employee employeeFromStorage = employeeRepository.findById(employee.getId()).orElseThrow(NoSuchElementException::new);
+    public Employee updateEmployee(Long id, Employee employee) {
+        Employee employeeFromStorage = employeeRepository.findById(id).orElseThrow(NoSuchElementException::new);
 
         employeeFromStorage.setName(employee.getName());
         employeeFromStorage.setCpf(employee.getCpf());
@@ -45,6 +45,8 @@ public class EmployeeServiceImp implements EmployeeService {
         employeeFromStorage.setDateOfBirth(employee.getDateOfBirth());
         employeeFromStorage.setAddress(employee.getAddress());
         employeeFromStorage.setProfessionalInformation(employee.getProfessionalInformation());
+
+        employeeRepository.save(employeeFromStorage);
 
         return employeeFromStorage;
     }
